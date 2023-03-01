@@ -3,7 +3,7 @@ import traceback,json,datetime,time
 from time import strftime, localtime
 
         
-class node_autobounce_task(object):
+class stock(object):
 
     def __init__(self, urlList, mess, vmUrl, historyfiveDayUrlList, vmUrlExp):
         self.urlList = urlList
@@ -86,13 +86,13 @@ def isFriday():
         
 
 if __name__ == '__main__':
+
+
     urlList = [{"url":"http://finance.pae.baidu.com/vapi/stockshort?code=09888&market=hk&finClientType=pc","name":"baidu","location":"hk"}, 
                {"url":"https://finance.pae.baidu.com/vapi/stockshort?code=BIDU&market=us&finClientType=pc","name":"baidu","location":"us"}]
-    
-    
     historyfiveDayUrlList = [{"url":"https://finance.pae.baidu.com/selfselect/getstockquotation?code=09888&all=1&ktype=1&isIndex=false&isBk=false&isBlock=false&isFutures=false&stockType=hk&group=quotation_fiveday_hk&finClientType=pc","name":"baidu","location":"hk"},
                       {"url":"https://finance.pae.baidu.com/selfselect/getstockquotation?code=BIDU&all=1&ktype=1&isIndex=false&isBk=false&isBlock=false&isFutures=false&stockType=us&group=quotation_fiveday_us&finClientType=pc","name":"baidu","location":"us"}]
-    task = node_autobounce_task(urlList, "", 'http://localhost:8428/write',  historyfiveDayUrlList, "http://localhost:8428/api/v1/import/prometheus")
+    task = stock(urlList, "", 'http://localhost:8428/write',  historyfiveDayUrlList, "http://localhost:8428/api/v1/import/prometheus")
     task.getAllData()
     if isFriday() :
         task.getHistoryData()
