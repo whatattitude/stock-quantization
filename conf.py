@@ -95,6 +95,7 @@ if __name__ == '__main__':
     while True:
 
         for i in taskConf.configDict["task"]:
+
             urlList = []
             historyfiveDayUrlList = []
             urlListItem={}
@@ -107,12 +108,13 @@ if __name__ == '__main__':
             historyfiveDayUrlListItem["location"]=i["location"]
             historyfiveDayUrlListItem["url"]=i["historyfiveDayUrl"]
             historyfiveDayUrlList.append(historyfiveDayUrlListItem)
-        task = craw.stock(urlList, "", 'http://localhost:8428/write',  historyfiveDayUrlList, "http://localhost:8428/api/v1/import/prometheus")
-        task.getAllData()
-        if craw.isFriday() :
-            task.getHistoryData()
 
-        time.sleep(1)
+            task = craw.stock(urlList, "", 'http://localhost:8428/write',  historyfiveDayUrlList, "http://localhost:8428/api/v1/import/prometheus")
+            task.getAllData()
+            if craw.isFriday() :
+                task.getHistoryData()
+
+            time.sleep(1)
  
     '''
     urlList = [{"url":"http://finance.pae.baidu.com/vapi/stockshort?code=09888&market=hk&finClientType=pc","name":"baidu","location":"hk"}, 
