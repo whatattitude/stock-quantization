@@ -1,3 +1,5 @@
 victoria-metrics-data*
 py.log
 nohup.out
+logs*
+logs/.*
