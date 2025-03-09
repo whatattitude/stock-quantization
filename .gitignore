@@ -7,3 +7,4 @@ data*
 vmalert
 victoria-metrics*
 *pid
+.env

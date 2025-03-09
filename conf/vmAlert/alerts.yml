@@ -2,7 +2,7 @@ groups:
   - name: stock_alerts
     rules:
       - alert: HighStockPrice
-        expr: stock_price{stock_name="baidu"} > 100
+        expr: stock_price{stock_name="baidu"} > 0
         for: 5m
         labels:
           severity: warning
@@ -11,7 +11,7 @@ groups:
           description: "股票 {{ $labels.stock_name }} 价格超过 100，当前价格: {{ $value }}"
 
       - alert: LowVolume
-        expr: stock_volume{stock_name="baidu"} < 1000
+        expr: stock_volume{stock_name="baidu"} < 0
         for: 5m
         labels:
           severity: warning

@@ -1,7 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+# 加载环境变量
+load_dotenv()
+
 class Config:
-    FEISHU_TOKEN = 't-g10439cCJOQABNA56QMS32NK5VNNLKWHVT2AS3BM'
-    FEISHU_RECEIVE_ID = '219fc48f'
-    FEISHU_RECEIVE_ID_TYPE = 'user_id'
+    FEISHU_TOKEN = os.getenv('FEISHU_TOKEN')
+    FEISHU_RECEIVE_ID = os.getenv('FEISHU_RECEIVE_ID')
+    FEISHU_RECEIVE_ID_TYPE = os.getenv('FEISHU_RECEIVE_ID_TYPE')
     # 飞书配置
-    FEISHU_APP_ID = "cli_a6b25a0dc1a3d00c"  # 替换为你的应用 ID
-    FEISHU_APP_SECRET = "ZI0gmoLMyb3WxoLYJrfmyfD5apibN3f6"  # 替换为你的应用密钥
+    FEISHU_APP_ID = os.getenv('FEISHU_APP_ID')
+    FEISHU_APP_SECRET = os.getenv('FEISHU_APP_SECRET')
