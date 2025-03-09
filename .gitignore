@@ -3,3 +3,6 @@ py.log
 nohup.out
 logs*
 logs/.*
+data*
+vmalert
+victoria-metrics*
