@@ -1,17 +1,21 @@
+[[task]]
+name="大位科技"
+location="sh"
 
 [[task]]
-name="baidu"
-location="us"
-historyfiveDayUrl="https://finance.pae.baidu.com/selfselect/getstockquotation?code=BIDU&all=1&ktype=1&isIndex=false&isBk=false&isBlock=false&isFutures=false&stockType=us&group=quotation_fiveday_us&finClientType=pc"
-url="https://finance.pae.baidu.com/vapi/stockshort?code=BIDU&market=us&finClientType=pc"
-prometheusWrite="http://localhost:8428/write"
-prometheusExport= "http://localhost:8428/api/v1/import/prometheus"
+name="五洲新春"
+location="sh"
+
 [[task]]
-name="baidu"
-location="hk"
-historyfiveDayUrl="https://finance.pae.baidu.com/selfselect/getstockquotation?code=09888&all=1&ktype=1&isIndex=false&isBk=false&isBlock=false&isFutures=false&stockType=hk&group=quotation_fiveday_hk&finClientType=pc"
-url="http://finance.pae.baidu.com/vapi/stockshort?code=09888&market=hk&finClientType=pc"
-prometheusWrite="http://localhost:8428/write"
-prometheusExport= "http://localhost:8428/api/v1/import/prometheus"
+name="拓维信息"
+location="sz"
 
 
+[[task]]
+name="华友钴业"
+location="sh"
+
+
+[[task]]
+name="华映科技"
+location="sz"

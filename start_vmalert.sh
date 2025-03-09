@@ -9,7 +9,7 @@ start_vmalert() {
         -rule=./conf/vmAlert/alerts.yml \
         -datasource.url=http://localhost:8428 \
         -notifier.url=http://localhost:9093 \
-        -notifier.url=http://127.0.0.1:9093 \
+        -notifier.url=http://localhost:5000/webhook \
         -remoteWrite.url=http://localhost:8428 \
         -remoteRead.url=http://localhost:8428 \
         -external.label=cluster=cn-shanghai \

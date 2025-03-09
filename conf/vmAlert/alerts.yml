@@ -1,20 +1,29 @@
 groups:
   - name: stock_alerts
+    # 设置组级别的评估间隔为1秒
+    interval: 1s
     rules:
       - alert: HighStockPrice
-        expr: stock_price{stock_name="baidu"} > 0
-        for: 5m
+        # 表达式会每秒评估一次
+        expr: stock_price{stock_name="baidu"} > 100
+        # 持续1秒就触发
+        for: 1s
         labels:
           severity: warning
+          location: "{{ $labels.location }}"
         annotations:
-          summary: "股票价格过高警告"
-          description: "股票 {{ $labels.stock_name }} 价格超过 100，当前价格: {{ $value }}"
+          summary: "过高警告"
+          description: "{{ $labels.stock_name }} 超过 100，当前: {{ $value }}"
 
-      - alert: LowVolume
-        expr: stock_volume{stock_name="baidu"} < 0
-        for: 5m
+      - alert: LowStockPrice
+        expr: stock_price{stock_name="baidu"} < 0
+        for: 1s
         labels:
           severity: warning
+          location: "{{ $labels.location }}"
         annotations:
-          summary: "成交量过低警告"
-          description: "股票 {{ $labels.stock_name }} 成交量低于 1000，当前成交量: {{ $value }}"
+          summary: "过低警告"
+          description: "股票 {{ $labels.stock_name }} 低于 90，当前: {{ $value }}"
+
+
+

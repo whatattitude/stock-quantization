@@ -95,3 +95,22 @@ class MessageSender:
         
         print("Failed to send message after all retries")
         return False
+
+    def send_test_message(self):
+        """
+        发送测试消息到飞书
+        :return: bool 是否发送成功
+        """
+        test_message = "这是一条测试消息，如果您收到这条消息，说明飞书通知配置正确！"
+        success = self.send_feishu_message(test_message)
+        if success:
+            print("测试消息发送成功！")
+        else:
+            print("测试消息发送失败，请检查配置。")
+        return success
+
+
+if __name__ == "__main__":
+    # 测试发送消息
+    sender = MessageSender()
+    sender.send_test_message()
