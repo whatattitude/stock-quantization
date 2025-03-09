@@ -1,0 +1,20 @@
+groups:
+  - name: stock_alerts
+    rules:
+      - alert: HighStockPrice
+        expr: stock_price{stock_name="baidu"} > 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "股票价格过高警告"
+          description: "股票 {{ $labels.stock_name }} 价格超过 100，当前价格: {{ $value }}"
+
+      - alert: LowVolume
+        expr: stock_volume{stock_name="baidu"} < 1000
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "成交量过低警告"
+          description: "股票 {{ $labels.stock_name }} 成交量低于 1000，当前成交量: {{ $value }}"
