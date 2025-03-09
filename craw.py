@@ -212,7 +212,10 @@ if __name__ == "__main__":
         },
     ]
     task = stock(urlList, historyfiveDayUrlList, "http://localhost:8428/api/v1/import")
-    task.getNowData()
+    
+    while True:
+        task.getNowData()
+        time.sleep(1)
 
     # 创建消息发送器实例
     message_sender = MessageSender()
