@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# http://106.15.39.159:8428/vmui/?#/?g0.range_input=30m&g0.end_input=2025-03-09T07%3A38%3A40&g0.relative_time=last_30_minutes&g0.tab=0&g0.expr=%7B__name__%21%3D%22%22%7D
 
 # Configuration
 VICTORIA_BIN="./victoria-metrics-prod"  # Or the full path to your victoria-metrics binary
