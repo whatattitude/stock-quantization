@@ -6,3 +6,4 @@ logs/.*
 data*
 vmalert
 victoria-metrics*
+*pid
